@@ -11,4 +11,13 @@ Spain - Morocco
 Portugal - Morocco
 """
 
+t1 , t2 = input().split("-")
+t1 , t2 = int(t1),int(t2)
+print(t1 , t2)
+"""
+out put print function but need touch
+for q ,w in Spain.items():
+    print(f"{q}:{w}" ,end=" , ") 
+
+"""
 
