@@ -31,16 +31,17 @@ def g_d_input(n):
     T1 = []
     T2 = []
     for i in range(0,n):
-        t1 , t2 = input(":").split("-")
+        t1 , t2 = input().split("-")
         T1.append(int(t1))
         T2.append(int(t2))
-    return tuple (zip(T1,T2) )
+    return tuple(zip(T1,T2))
+
 games_data =g_d_input(6)
 # if dic won't work lets try tuple
 #note : dictionaies can't have duplicated data
 
 def team_results(team1,team2,game_number):
-    Data = games_data[game_number]
+    Data = games_data[game_number - 1]
     team1_r = Data[0]
     team2_r = Data[-1]
     Delta = team1_r - team2_r
@@ -53,8 +54,8 @@ def team_results(team1,team2,game_number):
     elif team2_r > team1_r :
         team2['wins'] += 1
         team1['loses'] += 1
-        team2['goal difference'] += Delta
-        team1['goal difference'] -= Delta
+        team2['goal difference'] += (-1 *Delta)
+        team1['goal difference'] -= (-1 *Delta)
         team2['points'] += 3
     elif team1_r == team1_r :
         team1['draws'] += 1
@@ -63,4 +64,13 @@ def team_results(team1,team2,game_number):
         team2['points'] += 1
     return team1 , team2
 
+team_results(Iran,Spain,1)
+team_results(Iran,Portugal,2)
+team_results(Iran,Morocco,3)
+team_results(Spain,Portugal,4)
+team_results(Spain,Morocco,5)
+team_results(Portugal,Morocco,6)
+Table = dict(zip(['Iran' , 'Spain' , 'Portugal' ,'Morocco'],[Iran , Spain , Portugal ,Morocco]))
+for i , j in Table.items():
+    print(i,j)
 
