@@ -52,8 +52,10 @@ for i , j in Table.items():
     j= j.replace(": ",":")
     j = j.replace("{","")
     j = j.replace("}","")
-    j.replace(","," , ")
-    print(f"{i} {j}")
+    j = j.replace(", "," , ")
+    j = j.replace("'","")
+    j = j.replace('"','')
+    print(f"{i} {j} ")
 
 
 
