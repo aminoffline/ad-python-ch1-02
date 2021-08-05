@@ -71,6 +71,10 @@ team_results(Spain,Portugal,4)
 team_results(Spain,Morocco,5)
 team_results(Portugal,Morocco,6)
 Table = dict(zip(['Iran' , 'Spain' , 'Portugal' ,'Morocco'],[Iran , Spain , Portugal ,Morocco]))
+sorted(Table ,)
 for i , j in Table.items():
-    print(i,j)
+    print(f"{i} {j}")
 
+
+def SORT(Table.items):
+    sorted(Table.items(), key=lambda items: -items[1]['points'])
